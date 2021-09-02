@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+$c-background: #E5E5E5;
+$c-main: #5B5B5B;
+$c-border: #C1C1C1;
+$c-active: #3C9C41;
+$c-hover: #4DB252;
+$c-activeBtn: #318636;
+$c-error: #D23737;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+  max-width: 570px;
+  height: 500px;
+  background: #fff;
+  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  margin: 0 auto;
+  padding: 29px 35px 35px;
+}
+
+.form {
+  &__label {
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 12px;
+  }
+
+  &__inputs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  &__input {
+    width: 500px;
+    height: 70px;
+    outline: none;
+    border-radius: 16px;
+    padding: 24px 25px;
+    border: 1px solid $c-border;
+
+    &:focus {
+      border: 1px solid $c-active;
+    }
+
+    &-norm {
+      border: 1px solid $c-border;
+    }
+    
+    &-err {
+      border: 1px solid $c-error;
+      color: $c-error;
+    }
+
+    &-error {
+      color: $c-error;
+    }
+    
+
+    &-icon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 85px;
+      right: 24px;
+      z-index: 100;
+      cursor: pointer;
+      background: inherit;
+      border: none;
+    }
+
+    &-btn {
+      width: 500px;
+      height: 70px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      background-color: $c-active;
+      border: none;
+      border-radius: 16px;
+      margin-top: 20px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $c-hover;
+      }
+      
+      &:active {
+        background-color: $c-activeBtn;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .form {
+    &__input {
+      width: 308px;
+      height: 50px;
+
+      &-btn {
+        width: 308px;
+        height: 50px;
+      }
+
+      &-icon {
+        top: 75px;
+        right: 17px;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .form {
+    &__input {
+      width: 270px;
+      height: 45px;
+
+      &-btn {
+        width: 270px;
+        height: 45px;
+      }
+    }
+  }
+}

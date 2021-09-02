@@ -1,23 +1,20 @@
 
-import './App.css';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { StartPage } from './pages/StartPage';
+import { CreateChat } from './pages/CreateChat';
+import { ChatPage } from './pages/ChatPage';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Switch>
+        <Route exact path={'/'} component={StartPage} />
+        <Route exact path={'/welcome'} component={CreateChat} />
+        <Route exact path={'/chat'} component={ChatPage} />
+      </Switch>
+    </>
   );
 }
 
