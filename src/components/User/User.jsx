@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../context';
 import "./User.scss";
 
 export function User({ modalUserActive, setModalUserActive }) {
-  const [userName, setUserName] = useState('');
-  const [lastUserName, setLastUserName] = useState('');
+  const { userName, userLastName, handlerUserName, handlerUserLastName } = useContext(UserContext);
 
-  // const makeNewChannel = (event) => {
-  //   event.preventDefault();
-  // };
-
-  const handlerUserName = ({ target }) => {
-    setUserName(target.userName);
-  };
-
-  const handlerLastUserName = ({ target }) => {
-    setLastUserName(target.lastUserName);
-  };
+  const onSubmit = (event) => {
+    event.preventDefault();
+  }
 
   return (
     <div
@@ -30,6 +22,7 @@ export function User({ modalUserActive, setModalUserActive }) {
         <form
           action=""
           className="form"
+          onSubmit={onSubmit}
         >
           <input
             type="text"
@@ -42,8 +35,8 @@ export function User({ modalUserActive, setModalUserActive }) {
           <input
             type="text"
             className="form__input"
-            value={lastUserName}
-            onChange={handlerLastUserName}
+            value={userLastName}
+            onChange={handlerUserLastName}
             placeholder="Last name"
             required
           />

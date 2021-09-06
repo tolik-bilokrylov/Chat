@@ -1,23 +1,34 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+// import { useHistory } from 'react-router-dom';
+import { ChatContext } from '../../context';
+import { v4 as uuidv4 } from 'uuid';
 import "./ModalChatCreate.scss";
 
-export function ModalChatCreate({ active, setActive }) {
-  const [channelName, setChannelName] = useState('');
-  const [channelDiscription, setChannelDiscription] = useState('');
+export function ModalChatCreate({ active, setActive, ...props }) {
+  const { chat, handlerChatName, handlerChatDiscription, handlerChatId } = useContext(ChatContext);
+  const [inputChatName, setInputChatName] = useState('');
+  const [inputChatDiscription, setInputChatDiscription] = useState('');
 
-  let history = useHistory();
-
-  // const makeNewChannel = (event) => {
-  //   event.preventDefault();
-  // };
-
-  const handlerChannelName = ({ target }) => {
-    setChannelName(target.channelName);
+  const handleChangeChatName = (event) => {
+    setInputChatName(event.target.value);
   };
 
-  const handlerChannelDiscription = ({ target }) => {
-    setChannelDiscription(target.channelDiscription);
+  const handleChangeChatDiscription = (event) => {
+    setInputChatDiscription(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handlerChatName(inputChatName);
+    handlerChatDiscription(inputChatDiscription);
+    handlerChatId(uuidv4());
+    props.onSubmit({
+      id: Math.floor(Math.random() * 10000),
+      chatName: inputChatName,
+      chatDiscription: inputChatDiscription
+    });
+    setInputChatName('');
+    setInputChatDiscription('');
   };
 
   return (
@@ -33,21 +44,21 @@ export function ModalChatCreate({ active, setActive }) {
         <form
           action=""
           className="form"
-          onSubmit={() => { history.push('/chat') }}
+          onSubmit={handleSubmit}
         >
           <input
             type="text"
             className="form__input"
-            value={channelName}
-            onChange={handlerChannelName}
+            value={inputChatName}
+            onChange={handleChangeChatName}
             placeholder="Channel tittle..."
             required
           />
           <input
             type="text"
             className="form__input"
-            value={channelDiscription}
-            onChange={handlerChannelDiscription}
+            value={inputChatDiscription}
+            onChange={handleChangeChatDiscription}
             placeholder="Channel description"
             required
           />
