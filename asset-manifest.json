@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Chat/static/css/main.97baf5f3.chunk.css",
-    "main.js": "/Chat/static/js/main.160074bc.chunk.js",
-    "main.js.map": "/Chat/static/js/main.160074bc.chunk.js.map",
+    "main.css": "/Chat/static/css/main.7981228c.chunk.css",
+    "main.js": "/Chat/static/js/main.32687a5b.chunk.js",
+    "main.js.map": "/Chat/static/js/main.32687a5b.chunk.js.map",
     "runtime-main.js": "/Chat/static/js/runtime-main.c6cf11be.js",
     "runtime-main.js.map": "/Chat/static/js/runtime-main.c6cf11be.js.map",
-    "static/js/2.22db1b11.chunk.js": "/Chat/static/js/2.22db1b11.chunk.js",
-    "static/js/2.22db1b11.chunk.js.map": "/Chat/static/js/2.22db1b11.chunk.js.map",
+    "static/js/2.0428684b.chunk.js": "/Chat/static/js/2.0428684b.chunk.js",
+    "static/js/2.0428684b.chunk.js.map": "/Chat/static/js/2.0428684b.chunk.js.map",
     "index.html": "/Chat/index.html",
-    "static/css/main.97baf5f3.chunk.css.map": "/Chat/static/css/main.97baf5f3.chunk.css.map",
-    "static/js/2.22db1b11.chunk.js.LICENSE.txt": "/Chat/static/js/2.22db1b11.chunk.js.LICENSE.txt",
+    "static/css/main.7981228c.chunk.css.map": "/Chat/static/css/main.7981228c.chunk.css.map",
+    "static/js/2.0428684b.chunk.js.LICENSE.txt": "/Chat/static/js/2.0428684b.chunk.js.LICENSE.txt",
     "static/media/eye-slash.0bed875c.svg": "/Chat/static/media/eye-slash.0bed875c.svg",
     "static/media/eye.8e7e265e.svg": "/Chat/static/media/eye.8e7e265e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.c6cf11be.js",
-    "static/js/2.22db1b11.chunk.js",
-    "static/css/main.97baf5f3.chunk.css",
-    "static/js/main.160074bc.chunk.js"
+    "static/js/2.0428684b.chunk.js",
+    "static/css/main.7981228c.chunk.css",
+    "static/js/main.32687a5b.chunk.js"
   ]
 }
